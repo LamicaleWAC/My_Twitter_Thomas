@@ -4,6 +4,7 @@
 <head>
 	<title>Accueil</title>
 	<meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
@@ -14,11 +15,21 @@ if (isset($_SESSION["id"]) && isset($_COOKIE[$_SESSION["id"]]))
   header('Location:http://localhost/twitter/pageprofil.php');
 }
 ?>
+  <div class = "conteneur">
+    <div class="titre">
+      <h1>Twit-Twit</h1>
+    </div>
+    <div class="content_titre">
+     
+      
+     
+     </div>
+  </div>
   <div class="form" id="div">
-    <input type="submit" id="inscri" class="btn btn-primary" value="S'inscrire au site">
+    <p><input type="submit" id="inscri" class="btn btn-info" value="S'inscrire au site"></p>
      <br>
       <p class="pa">Déjà membre?</p>
-    <input type="submit" id="connexion" class="btn btn-primary" value="Se connecter">
+   <p> <input type="submit" id="connexion" class="btn btn-info" value="Se connecter"></p>
   </div>
        
       

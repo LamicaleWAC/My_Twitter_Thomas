@@ -1,7 +1,22 @@
 .form{
 	text-align: center;
 	padding-top: 200px;
-
-
-
+}
+.conteneur{
+	display: flex;
+	flex-direction: column;
+	background-color: #59A2EA;
+	height: auto;
+	border-width:2px;
+	border-style: double;
+	border-color: black;
+}
+h1{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+body{
+	background-image: url("testy.jpg");
+	
 }
