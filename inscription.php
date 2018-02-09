@@ -9,12 +9,10 @@
   <link rel="stylesheet" type="text/css" href="bootstrap.css">
 </head>
 <body>
-
-
   <div class="form" id="div">
-  <form method="post" action="inscriconfirm.php">
+    <form method="post" action="inscriconfirm.php">
   <p>Formulaire d'inscription:</p>
-  <input type="hidden" name="test1">
+         <input type="hidden" name="test1">
   <p>Nom:</p>
          <input type="text" placeholder="Entrez votre nom" name="lastname" id="lastname" required>
   <p>Prenom:</p>
@@ -27,12 +25,12 @@
          <input type="password" placeholder="Entrez votre mot de passe" name="password" id="password" required>
       <br><label for="description">Votre présentation :</label><br />
         <textarea name="description" id="description"></textarea><br>
-  <br><input type="submit" id="inscriconfirm" value="Inscription">
-  </form>
+  <br>   <input type="submit" id="inscriconfirm" value="Inscription">
+    </form>
     <br>
-      </div>
-  <p>
-    <a href="Accueil.php">Retourner a l'Accueil</a>
-  </p>
+  </div>
+    <p>
+      <a href="Accueil.php">Retourner a l'Accueil</a>
+    </p>
   </body>
 </html>

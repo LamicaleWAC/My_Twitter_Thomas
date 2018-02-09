@@ -9,7 +9,7 @@ require_once("profil.php");
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
 </head>
 <body>
-	<?php
+<?php
 $user = new profil($_SESSION["id"]);
 $user->modifabo($_SESSION["id"]);
 ?>

@@ -42,7 +42,7 @@ public function setUsername($username)
 
       $this->username = $username;
 
-    }
+}
 
 
 public function setPassword($password, $salt = "si tu aimes la wac tape dans tes mains")
@@ -51,9 +51,6 @@ public function setPassword($password, $salt = "si tu aimes la wac tape dans tes
         $hash = hash_hmac('ripemd160', $password, $salt);
    
         $this->password = $hash;
-
-    
-
 }
 
     function checkmember()
@@ -67,6 +64,8 @@ public function setPassword($password, $salt = "si tu aimes la wac tape dans tes
         {
             echo "mauvais nom d'utilisateur ou mot de passe";
             echo "<meta http-equiv='Refresh' content='3;URL=http://localhost/twitter/Accueil.php'>";
+            return false;
+
 
         }
         
@@ -81,8 +80,9 @@ public function setPassword($password, $salt = "si tu aimes la wac tape dans tes
         
         if( $mdp1 == $this->password && $pseudo1 == $this->username)
         { 
-
-            $_SESSION['id'] = $id;
+                        $_SESSION['id'] = $id;
+                        header('Location:http://localhost/twitter/pageprofil.php');
+                        setcookie($_SESSION["id"],true , time() + 365*24*3600, null, null, false, true);
             
         }
 
@@ -91,6 +91,7 @@ public function setPassword($password, $salt = "si tu aimes la wac tape dans tes
 
             echo "mauvais nom d'utilisateur ou mot de passe";
            echo "<meta http-equiv='Refresh' content='3;URL=http://localhost/twitter/Accueil.php'>";
+           return false;
             
 
         }
@@ -103,14 +104,11 @@ public function setPassword($password, $salt = "si tu aimes la wac tape dans tes
             $db = new bdd();
             $rq = $db->getBdd()->query('SELECT * FROM user  WHERE username LIKE "%'.$this->username.'%"');
             $info = $rq->fetchAll();
-            foreach ($info as $key => $value) {
+            foreach ($info as $key => $value) 
+            {
              echo "<a href=\"profilmembre.php?ID=".$value['id']."\" >"; ?>
-            <strong><?php echo $value["username"];?></strong><br><?php
-
-            /*echo "Nom : ".$value["firstname"]."<br>";
-            echo "Prenom : ".$value["lastname"]."<br>";
-            echo "Description : ".$value["description"]."<br>";
-            echo "Adresse e-mail : ".$value["email"]."<br>";*/
+            <strong><?php echo $value["username"];?></strong><br>
+            <?php
             $_SESSION["idcible"] = $value["id"];
             
             }

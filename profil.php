@@ -8,7 +8,6 @@ class profil
 	
 $this->id = $id;
 
-
 }
 
 public function getId()
@@ -18,6 +17,7 @@ public function getId()
     return $this->id;
 
   }
+
   public function setPassword($password, $salt = "si tu aimes la wac tape dans tes mains")
 {
 
@@ -29,7 +29,7 @@ public function getId()
 
 function myprofil()
 
-  { 
+   { 
         $db = new bdd();
         $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
         $info = $rq->fetchAll();
@@ -47,7 +47,7 @@ function myprofil()
 
     function profilmembre()
 
-  { 
+   { 
         $db = new bdd();
         $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
         $info = $rq->fetchAll();
@@ -63,8 +63,8 @@ function myprofil()
 
     }
 
-    function modifabo($id)
-{
+   function modifabo($id)
+  {
 	$bdd = new bdd();
 
 	if (($_POST["password"] != ""))
@@ -100,8 +100,7 @@ function myprofil()
 	
 	
 		echo "Profil modifié avec succès\n";
-	
-}
+  }
 
 	function supabo($id)
 	{
@@ -123,21 +122,11 @@ function myprofil()
         	return $username;
 
 	}
+
 	function follow($id_user, $id_user_follow)
 	{
 		
-		/*$bdd = new bdd();
-        $rq = $db1->getBdd()->query('SELECT id FROM follow  WHERE id_user ="'.$id_user.'" AND id_user_follow = "'.$id_user_follow.'"');
-        $check = $rq->fetchAll();
-        $test = count($check);
-        if ($test == 0) 
-        {
-            return "error";
-
-        }
-        else
-        {*/
-        	$bdd = new bdd();
+		$bdd = new bdd();
 		 $q = $bdd->getBdd()->prepare('INSERT INTO follow(id_user, id_user_follow) VALUES(:id, :id_user_follow)');
 
       $q->bindValue(':id', $id_user );
@@ -145,9 +134,8 @@ function myprofil()
     
       $q->execute();
   		
-      //echo "Vous suivez désormais ".$uti->getUsername($_POST["id_follow"]).".";
-      //echo "Vous suivez désormais ".;
 	}
+
 	function unfollow($id_user, $id_user_follow)
 	{
 		$bdd = new bdd();
@@ -200,15 +188,15 @@ function myprofil()
         
         $user = $bdd->getBdd()->query('SELECT username, description, id FROM user  WHERE id ="'.$id_follow.'"');
         $check = $user->fetchAll();
-       foreach ($check as $key => $value)
-        {
+            foreach ($check as $key => $value)
+            {
             
             echo "<a href=\"profilmembre.php?ID=".$value['id']."\" >";
             echo "<strong>". $value["username"]."</strong></a><br>";
             echo "description: ".$value["description"]."<br>";
             echo "<br>";
+            }
         }
-    }
 
     }
 
@@ -223,18 +211,15 @@ function myprofil()
         
         $user = $bdd->getBdd()->query('SELECT username, description, id FROM user  WHERE id ="'.$id_uti.'"');
         $check = $user->fetchAll();
-       foreach ($check as $key => $value)
-        {
+            foreach ($check as $key => $value)
+            {
             
             echo "<a href=\"profilmembre.php?ID=".$value['id']."\" >";
             echo "<strong>". $value["username"]."</strong></a><br>";
             echo "description: ".$value["description"]."<br>";
             echo "<br>";
+            }
         }
-    }
-
-    }
-
-	
+    }	
 
 }

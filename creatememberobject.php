@@ -117,30 +117,27 @@ public function setLastname($lastname)
    
       $this->password = $hash;
 
-   }
-        public function setUsername($username)
+  }
+      public function setUsername($username)
 
-  {
+    {
 
       $this->username = $username;
 
-   }
+    }
  
 
-function addmember()
-
+  function addmember()
   { 
-        $db = new bdd();
-        $rq = $db->getBdd()->query('SELECT username, email FROM user  WHERE username ="'.$this->username.'" OR email="'.$this->email.'"');
-        $check = $rq->fetchAll();
-        $test = count($check);
+    $db = new bdd();
+    $rq = $db->getBdd()->query('SELECT username, email FROM user  WHERE username ="'.$this->username.'" OR email="'.$this->email.'"');
+    $check = $rq->fetchAll();
+    $test = count($check);
     if($test != 0)
     {
        echo "le pseudo ou l'adresse e-mail que vous avez entrés sont déjà associé a un compte\n";
        ?><p><a href="inscription.php">Retour au formulaire</a></p><?php
       return;
-      
-
     }
 
     else

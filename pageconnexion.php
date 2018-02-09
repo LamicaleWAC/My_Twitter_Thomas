@@ -7,7 +7,7 @@
     <body>
                  <h1>Connexion</h1>
 
-    <form method="post" action="checkconnect.php">
+        <form method="post" action="checkconnect.php">
     <p>
         Pseudo : <input type="text" id="username" name="username">
     </p>
@@ -15,10 +15,10 @@
         Mot de passe : <input type="password" id="password" name="password">
     </p>
     <p>
-        <input type="submit" id="submit" value="Se connecter">
+            <input type="submit" id="submit" value="Se connecter">
     </p>
-        <input type="hidden" name="">
-    </form>
+            <input type="hidden" name="">
+        </form>
     <p>
         <a href="Accueil.php">Retourner a l'Accueil</a>
     </p>
