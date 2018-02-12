@@ -10,7 +10,7 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="essau.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
  <div class = "conteneur">
     <div class="titre">
       <h1>Twit-Twit</h1>
@@ -28,9 +28,11 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
   </div>
 </head>
 <body>
+  <div class="affich">
 <?php
 $user = new profil($_SESSION["id"]);
 $user->listabonnements($_SESSION["id"]); ?>
+</div>
 <a href="pageprofil.php">Retour</a>
 </body>
 </html>

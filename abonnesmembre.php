@@ -10,7 +10,7 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="essau.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div class = "conteneur">
@@ -28,9 +28,11 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
      
     </div>
   </div>
+  <div class="affich"> 
 <?php
 $user = new profil($_GET["ID"]);
 $user->listabonnés($_GET["ID"]); ?>
+</div>
 <p><?php echo "<a href='profilmembre.php?ID=".$_GET['ID']."'>Retour</a>"; ?> </p>
  
 </p>

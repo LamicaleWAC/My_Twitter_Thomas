@@ -10,7 +10,7 @@ if (!isset($_SESSION["id"]) && !isset($_COOKIE[$_SESSION["id"]]))
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="essau.css">
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
   <body>
     <div class = "conteneur">
@@ -35,7 +35,7 @@ $test = new connect($_POST);
 ?>
 </div>
 <div class="lien">
-<a href="recherche.php">retour</a>
+<a href="pageprofil.php">retour</a>
 </div>
   </body>
 </html>

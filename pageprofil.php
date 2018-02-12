@@ -13,7 +13,7 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
 <html>
   <head>
 	   <title>Mon profil</title>
-  <link rel="stylesheet" type="text/css" href="essau.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
     <div class = "conteneur">
@@ -30,16 +30,18 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
      <a  href="decopage.php" id="deco">Deconnection</a>
      </div>
   </div>
-<p>
+  <div id="profil">
+<p class="test">
   votre profil:
 </p>
 <?php
 $user = new profil($_SESSION["id"]);
 $user->myprofil();?> 
-<p><?php echo "<a href='abonnements.php'>Abonnements: ". $user->abonnements($_SESSION["id"])."</a>"; ?> </p>
-<p><?php echo "<a href='abonnés.php'>Abonnés: ". $user->abonnés($_SESSION["id"])."</a>"; ?> </p>
+<p><?php echo '<a href="abonnements.php" class="test">Abonnements: '. $user->abonnements($_SESSION["id"]).'</a>'; ?> </p>
+<p><?php echo '<a href="abonnés.php" class="test">Abonnés: '. $user->abonnés($_SESSION["id"]).'</a>'; ?> </p>
 
-<p>Modifier vos informations:</p>
+<button type="button" class="but" onclick="showhistorique();">Modifier vos informations</button>
+      <div id="infos" style="display:none;">
     <form method="post" action="pagemodif.php">
           <input type="hidden" name="var2" value="<?php echo "".$_SESSION["$id"]."" ?>"></input> 
   <p>Changer votre mot de passe:</p>
@@ -53,16 +55,21 @@ $user->myprofil();?>
   <p>Description:</p>
          <br><label for="description">Votre nouvelle présentation :</label><br />
         <textarea name="description" id="description"></textarea><br>
-  <p><br><input type="submit" class="btn btn-primary" value="Modifier"></p>
+  <p><br><input type="submit" class="but" value="Modifier"></p>
     </form>
+
+  </div>
+
       <form method="post" action="supabopage.php" >
          <input type="hidden" name="var" value="<?php echo "".$_SESSION["id"]."" ?>"></input>
-          <input type="submit" class="btn btn-primary" value="Supprimer votre compte ">
+         <br> <input type="submit" class="but" value="Supprimer votre compte ">
       </form>
 <br>
         <form method="post" action="decopage.php">
-          <input type="submit" id="deco" value="Se deconnecter">
+          <input type="submit" id="deco" class="but" value="Se deconnecter">
         </form>
-      <br><a href="Accueil.php">Aller a l'accueil</a><br>
+        </div>
+     
+      <script type="text/javascript" src="modifprofil.js"></script>
   </body>
 </html>

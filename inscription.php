@@ -6,10 +6,13 @@
 		Accueil
 	</title>
 	<meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="bootstrap.css">
+ 
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
 </head>
 <body>
-  <div class="form" id="div">
+  <div id="image"></div>
+  <div class="form1" id="div">
     <form method="post" action="inscriconfirm.php">
   <p>Formulaire d'inscription:</p>
          <input type="hidden" name="test1">
@@ -25,12 +28,12 @@
          <input type="password" placeholder="Entrez votre mot de passe" name="password" id="password" required>
       <br><label for="description">Votre présentation :</label><br />
         <textarea name="description" id="description"></textarea><br>
-  <br>   <input type="submit" id="inscriconfirm" value="Inscription">
+  <br>   <input type="submit" id="inscriconfirm" class="btn btn-warning" value="Inscription">
     </form>
     <br>
   </div>
     <p>
-      <a href="Accueil.php">Retourner a l'Accueil</a>
+      <div id="lien"><a href="Accueil.php">Retourner a l'Accueil</a></div>
     </p>
   </body>
 </html>

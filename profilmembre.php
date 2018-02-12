@@ -18,7 +18,7 @@ elseif ($_SESSION["id"] == $_GET["ID"])
   <head>
       <script src="https://code.jquery.com/jquery.js"></script>
 	   <title>Mon profil</title>
-    <link rel="stylesheet" type="text/css" href="essau.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
 <body>
   <div class = "conteneur">
@@ -35,6 +35,8 @@ elseif ($_SESSION["id"] == $_GET["ID"])
      <a  href="decopage.php" id="deco">Deconnection</a>
      </div>
   </div>
+  <div id="profil">
+
 <?php
 $id = $_GET["ID"];
 $user = new profil($_GET["ID"]);
@@ -50,10 +52,11 @@ $username = $user->getUsername($_GET["ID"]);
     ?>
   </div>
   <div id="followdiv" >
-    <input type='submit' id='follow' class='btn btn-primary' value='Suivre <?php echo $username; ?>' >
+    <input type='submit' id='follow' class='but' value='Suivre <?php echo $username; ?>' >
     <?php echo "<input type=\"hidden\" id=\"test\" value=\"".$_GET["ID"]."\" >";
     echo "<a href=\"follow.php?ID=".$_GET['ID']."\" >";
     ?>
+  </div>
   </div>
   <script type="text/javascript" src="checkfollow.js"></script>
   <script type="text/javascript" src="requete.js"></script>

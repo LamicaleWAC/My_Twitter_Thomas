@@ -34,11 +34,11 @@ function myprofil()
         $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
         $info = $rq->fetchAll();
         foreach ($info as $key => $value) {
-        	?><strong><?php echo $value["username"];?></strong><br><?php
-        	echo "Nom : ".$value["last_name"]."<br>";
-        	echo "Prenom : ".$value["first_name"]."<br>";
-        	echo "Description : ".$value["description"]."<br>";
-        	echo "Adresse e-mail : ".$value["email"]."<br>";
+        	?><strong><?php echo '<p class="test">'.$value["username"].'</p>';?></strong><?php
+        	echo '<p class= "test">Nom : '.$value["last_name"].'</p>';
+        	echo '<p class= "test">Prenom : '.$value["first_name"].'</p>';
+        	echo '<p class= "test">Description : '.$value["description"].'</p>';
+        	echo '<p class= "test">Adresse e-mail : '.$value["email"].'</p>';
         	
         	}
         	
@@ -52,10 +52,10 @@ function myprofil()
         $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
         $info = $rq->fetchAll();
         foreach ($info as $key => $value) {
-        	?><strong><?php echo $value["username"];?></strong><br><?php
-        	echo "Nom : ".$value["first_name"]."<br>";
-        	echo "Prenom : ".$value["last_name"]."<br>";
-        	echo "Description : ".$value["description"]."<br>";
+        	?><br><strong><?php echo '<p class="test">'.$value["username"].'</p>';?></strong><?php
+        	echo '<p class= "test">Nom : '.$value["first_name"].'</p>';
+        	echo '<p class= "test">Prenom : '.$value["last_name"].'</p>';
+        	echo '<p class= "test">Description : '.$value["description"].'</p>';
         	
         	
         	}
