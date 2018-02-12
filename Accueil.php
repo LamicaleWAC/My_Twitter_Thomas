@@ -30,10 +30,10 @@ if (isset($_SESSION["id"]) && isset($_COOKIE[$_SESSION["id"]]))
 </div>
   <div id="image"></div>
   <div class="form" id="div">
-    <p><input type="submit" id="inscri" class="btn btn-info" value="Devenir notre produit"></p>
+    <p><input type="submit" id="inscri" class="btn btn-warning" value="Devenir notre produit"></p>
      <br>
       <p class="pa">Déjà membre?</p>
-   <p> <input type="submit" id="connexion" class="btn btn-info" value="Se connecter"></p>
+   <p> <input type="submit" id="connexion" class="btn btn-warning" value="Se connecter"></p>
   </div>
 
  
