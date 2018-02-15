@@ -11,22 +11,24 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
 <html>
   <head>
 	 <link rel="stylesheet" type="text/css" href="style.css">
+    <?php $pouf = new profil($_SESSION["id"]);
+  $pouf->verifTheme($_SESSION["id"]);?>
 </head>
 <body>
-	<div class = "conteneur">
-    <div class="titre">
-      <h1>Twit-Twit</h1>
-    </div>
-    <div class="content_titre">
-      <a href="pageprofil.php" id="lienprofil">Mon profil</a>
-      <?php $u = new profil($_SESSION["id"]);
-       echo "Connecté en tant que: ".$u->getUsername($_SESSION["id"]);?>
-      <form method="post" action="resultat.php" id="form">
+<div class = "conteneur">
+      <div class="poi">
+    <div> <a href="pageprofil.php"  id="lienprofil">Mon profil</a></div>
+      <div><a  href="decopage.php"  id="deco">Deconnection</a></div>
+      </div>
+    
+    <div><?php $u = new profil($_SESSION["id"]);
+       echo $u->getUsername($_SESSION["id"]);?></div>
+       <div class = money></div>
+      <div><form method="post" action="resultat.php" id="form">
         <input type="text" name="username" id="username" placeholder="Rechercher un membre">
-      </form>
-     <a  href="decopage.php" id="deco">Deconnection</a>
-    </div>
-  </div>
+      </form></div>
+      <div><input type="submit" class="tweetbut" name="bouton" id="tweet" value="Tweeter" onclick="test()"></div>
+     </div>
 <div class="affich">
 <?php
 $user = new profil($_GET["ID"]);

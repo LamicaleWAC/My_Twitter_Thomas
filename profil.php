@@ -211,15 +211,16 @@ function myprofil()
         {
             $id_follow = $value["id_user_follow"];
         
-        $user = $bdd->getBdd()->query('SELECT username, description, id FROM user  WHERE id ="'.$id_follow.'"');
+        $user = $bdd->getBdd()->query('SELECT * FROM user  WHERE id ="'.$id_follow.'"');
         $check = $user->fetchAll();
             foreach ($check as $key => $value)
             {
+            echo '<div class= "searchbox">';
+            echo '<a class="lien5" href="profilmembre.php?ID='.$value['id'].'" >';
+            echo '<img src='.$value["picture"].' class="david"><br>'; ?>
+            <strong><?php echo '<p class="lien5">'. $value["username"];'</p>'?></strong><br>
+            </div><?php
             
-            echo "<a href=\"profilmembre.php?ID=".$value['id']."\" >";
-            echo "<strong>". $value["username"]."</strong></a><br>";
-            echo "description: ".$value["description"]."<br>";
-            echo "<br>";
             }
         }
 
@@ -273,15 +274,16 @@ function myprofil()
         {
             $id_uti = $value["id_user"];
         
-        $user = $bdd->getBdd()->query('SELECT username, description, id FROM user  WHERE id ="'.$id_uti.'"');
+        $user = $bdd->getBdd()->query('SELECT * FROM user  WHERE id ="'.$id_uti.'"');
         $check = $user->fetchAll();
             foreach ($check as $key => $value)
             {
             
-            echo "<a href=\"profilmembre.php?ID=".$value['id']."\" >";
-            echo "<strong>". $value["username"]."</strong></a><br>";
-            echo "description: ".$value["description"]."<br>";
-            echo "<br>";
+             echo '<div class= "searchbox">';
+            echo '<a class="lien5" href="profilmembre.php?ID='.$value['id'].'" >';
+            echo '<img src='.$value["picture"].' class="david"><br>'; ?>
+            <strong><?php echo '<p class="lien5">'. $value["username"];'</p>'?></strong><br>
+            </div><?php
             }
         }
     }	
