@@ -34,13 +34,31 @@ function myprofil()
         $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
         $info = $rq->fetchAll();
         foreach ($info as $key => $value) {
-        	?><strong><?php echo '<p class="test">'.$value["username"].'</p>';?></strong><?php
-        	echo '<p class= "test">Nom : '.$value["last_name"].'</p>';
-        	echo '<p class= "test">Prenom : '.$value["first_name"].'</p>';
-        	echo '<p class= "test">Description : '.$value["description"].'</p>';
+        	?><strong><?php echo '<p class="pseudo">'.$value["username"].'</p>';?></strong><?php
+            echo '<img src='.$value["picture"].' class="david">';
+        	/*echo '<p class= "test">Nom: '.$value["last_name"].'</p>';
+        	echo '<p class= "test">Prenom: '.$value["first_name"].'</p>';*/
+        	echo '<p class= "test">Description: '.$value["description"].'</p>';
         	echo '<p class= "test">Adresse e-mail : '.$value["email"].'</p>';
         	
         	}
+    }
+
+    function allMyProfil()
+
+   { 
+        $db = new bdd();
+        $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
+        $info = $rq->fetchAll();
+        foreach ($info as $key => $value) {
+            ?><strong><?php echo '<p class="pseudo">'.$value["username"].'</p>';?></strong><?php
+           
+            echo '<p class= "test">Nom: '.$value["last_name"].'</p>';
+            echo '<p class= "test">Prenom: '.$value["first_name"].'</p>';
+            echo '<p class= "test">Description: '.$value["description"].'</p>';
+            echo '<p class= "test">Adresse e-mail : '.$value["email"].'</p>';
+            
+            }
         	
 
     }
@@ -52,6 +70,7 @@ function myprofil()
         $rq = $db->getBdd()->query('SELECT * FROM user  WHERE id ="'.$this->id.'"');
         $info = $rq->fetchAll();
         foreach ($info as $key => $value) {
+            echo '<img src='.$value["picture"].' class="david">';
         	?><br><strong><?php echo '<p class="test">'.$value["username"].'</p>';?></strong><?php
         	echo '<p class= "test">Nom : '.$value["first_name"].'</p>';
         	echo '<p class= "test">Prenom : '.$value["last_name"].'</p>';
@@ -67,7 +86,13 @@ function myprofil()
   {
 	$bdd = new bdd();
 
-	if (($_POST["password"] != ""))
+	if (($_POST["picture"] != ""))
+    {
+        
+        $bdd->getBdd()->exec('UPDATE user SET picture  = "'.($_POST["picture"]).'" WHERE id= "'.$id.'"');
+    }
+
+    if (($_POST["password"] != ""))
 	{
 		
 		$bdd->getBdd()->exec('UPDATE user SET password  = "'.setPassword($_POST["password"]).'" WHERE id= "'.$id.'"');
@@ -199,6 +224,45 @@ function myprofil()
         }
 
     }
+
+    function setTheme($val,$id)
+    {   
+        $bdd = new bdd();
+        $bdd->getBdd()->exec('UPDATE user SET theme = "'.$val.'" WHERE id= "'.$id.'"');
+    }
+
+    function verifTheme($id)
+    {
+        $bdd = new bdd();
+        $user = $bdd->getBdd()->query('SELECT theme FROM user  WHERE id ="'.$id.'"');
+        $check = $user->fetchAll();
+        foreach ($check as $key => $value)
+        {
+            $theme = $value["theme"];
+        }
+        if ($theme == "defaut") {
+            echo '<link rel="stylesheet" type="text/css" href="style.css">';
+            
+        }
+        elseif ($theme == "dark") {
+             echo '<link rel="stylesheet" type="text/css" href="styleda.css">';
+           
+        }
+        elseif ($theme == "dora") {
+             echo '<link rel="stylesheet" type="text/css" href="styledo.css">';
+            
+        }
+        elseif ($theme == "eco") {
+             echo '<link rel="stylesheet" type="text/css" href="styleeco.css">';
+            
+        }
+
+
+
+    }
+
+
+
 
         function listabonnés($id_user)
     {

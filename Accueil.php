@@ -17,11 +17,11 @@ if (isset($_SESSION["id"]) && isset($_COOKIE[$_SESSION["id"]]))
 }
 ?>
 
-  <div class = "conteneur">
+  <div class = "conteneur1">
     <div class="titre">
       <h1>Twit-Twit</h1>
     </div>
-    <div class="content_titre">
+    <div class="content_titre1">
       Vos données sont notre richesse!
 </div>
   </div>

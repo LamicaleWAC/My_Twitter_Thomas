@@ -19,22 +19,24 @@ elseif ($_SESSION["id"] == $_GET["ID"])
       <script src="https://code.jquery.com/jquery.js"></script>
 	   <title>Mon profil</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <?php $pouf = new profil($_SESSION["id"]);
+  $pouf->verifTheme($_SESSION["id"]);?>
   </head>
 <body>
-  <div class = "conteneur">
-    <div class="titre">
-      <h1>Twit-Twit</h1>
-    </div>
-    <div class="content_titre">
-      <a href="pageprofil.php" id="lienprofil">Mon profil</a>
-      <?php $u = new profil($_SESSION["id"]);
-       echo "Connecté en tant que: ".$u->getUsername($_SESSION["id"]);?>
-      <form method="post" action="resultat.php" id="form">
+ <div class = "conteneur">
+      <div class="poi">
+    <div> <a href="pageprofil.php"  id="lienprofil">Mon profil</a></div>
+      <div><a  href="decopage.php"  id="deco">Deconnection</a></div>
+      </div>
+    
+    <div><?php $u = new profil($_SESSION["id"]);
+       echo $u->getUsername($_SESSION["id"]);?></div>
+       <div class = money></div>
+      <div><form method="post" action="resultat.php" id="form">
         <input type="text" name="username" id="username" placeholder="Rechercher un membre">
-      </form>
-     <a  href="decopage.php" id="deco">Deconnection</a>
+      </form></div>
+      <div><input type="submit" class="tweetbut" name="bouton" id="tweet" value="Tweeter" onclick="test()"></div>
      </div>
-  </div>
   <div id="profil">
 
 <?php
@@ -43,8 +45,8 @@ $user = new profil($_GET["ID"]);
 $user->profilmembre();
 $username = $user->getUsername($_GET["ID"]);
 ?>
-<p><?php echo "<a href='abomembres.php?ID=".$_GET['ID']."'>Abonnements: ". $user->abonnements($_GET["ID"])."</a>"; ?> </p>
-<p><?php echo "<a href='abonnesmembre.php?ID=".$_GET['ID']."'>Abonnés: ". $user->abonnés($_GET["ID"])."</a>"; ?> </p>
+<p><?php echo '<a class="test" href="abomembres.php?ID='.$_GET['ID'].'">Abonnements: '. $user->abonnements($_GET["ID"]).'</a>'; ?> </p>
+<p><?php echo '<a class="test" href="abonnesmembre.php?ID='.$_GET['ID'].'">Abonnés: '. $user->abonnés($_GET["ID"]).'</a>'; ?> </p>
   <div id="verif" >
     <?php
     $verif_follow = $user->verif_follow($_SESSION["id"], $_GET["ID"]);

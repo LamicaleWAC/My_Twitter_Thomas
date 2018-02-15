@@ -13,12 +13,8 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
 <!DOCTYPE html>
 <html>
   <head>
-     <title>Mon profil</title>
-
+	   <title>Mon profil</title>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <?php $pouf = new profil($_SESSION["id"]);
-  $pouf->verifTheme($_SESSION["id"]);?>
-   <script src="https://code.jquery.com/jquery.js"></script>
   </head>
   <body>
     <div class = "conteneur">
@@ -43,34 +39,23 @@ $user->myprofil();?>
 <p><?php echo '<a href="abonnements.php" class="test">Abonnements: '. $user->abonnements($_SESSION["id"]).'</a>'; ?> </p>
 <p><?php echo '<a href="abonnés.php" class="test">Abonnés: '. $user->abonnés($_SESSION["id"]).'</a>'; ?> </p>
 
-<button type="button" class="but" onclick="showhistorique();">Modifier votre compte</button>
+<button type="button" class="but" onclick="showhistorique();">Modifier vos informations</button>
       <div id="infos" style="display:none;">
-       <?php $user->allMyProfil();?>
-       <form method="post" action="theme.php" id="theme1">
-        <label for="theme" class="test">Changer le thème</label><br>
-       <br><select name="theme" id="theme">
-            <option value="defaut">Thème par défaut</option>
-            <option value="dark">Dark</option>
-            <option value="dora">Dora</option>
-            <option value="eco">Eco</option>
-      </select>
-      <?php echo "<input type=\"hidden\" id=\"test1\" value=\"".$_SESSION["id"]."\" >";?>
-      <input type="submit" name="valid" id="buto" value="Valider">
-    </form>
     <form method="post" action="pagemodif.php">
           <input type="hidden" name="var2" value="<?php echo "".$_SESSION["$id"]."" ?>"></input> 
-    <p class="test">Changer votre image de profil:</p>
+    <p>Changer votre image de profil:</p>
           <input type="text" name="picture" placeholder="Entrez l'url de votre image">
-  <p class="test">Changer votre mot de passe:</p>
+  <p>Changer votre mot de passe:</p>
           <input type="text" placeholder="Entrez le nouveau mot de passe" name="password">
-  <p class="test">Nom:</p>
+  <p>Nom:</p>
          <input type="text" placeholder="Entrez le nouveau nom" name="lastname">
-  <p class="test">Prenom:</p>
+  <p>Prenom:</p>
          <input type="text" placeholder="Entrez le nouveau prenom" name="firstname">
-  <p class="test">Adresse E-mail:</p>
+  <p>Adresse E-mail:</p>
          <input type="email" placeholder="Entrez la nouvelle adresse email" name="email">
-         <p class="test>"><label for="description">Votre nouvelle présentation :</label><br />
-        <textarea name="description" id="description"></textarea><br></p>
+  <p>Description:</p>
+         <br><label for="description">Votre nouvelle présentation :</label><br />
+        <textarea name="description" id="description"></textarea><br>
   <p><br><input type="submit" class="but" value="Modifier"></p>
     </form>
 
@@ -82,7 +67,7 @@ $user->myprofil();?>
       </form>
 <br>
         <form method="post" action="decopage.php">
-          <input type="submit" id="deco1" class="but" value="Se deconnecter">
+          <input type="submit" id="deco" class="but" value="Se deconnecter">
         </form>
         </div>
 <div class="tweetbox">
@@ -124,8 +109,6 @@ foreach ($posts as $key => $list){
 ?>
 <p><b>Vous n'avez encore rien posté!</b></p>
 <?php
-
-
 }
 ?>
 
@@ -133,8 +116,8 @@ foreach ($posts as $key => $list){
 </body>
 </html>
         </div>
-      <script type="text/javascript" src="theme.js"></script>
+     
       <script type="text/javascript" src="modifprofil.js"></script>
-      
+      <script type="text/javascript" src="tweet.js"></script>
   </body>
 </html>

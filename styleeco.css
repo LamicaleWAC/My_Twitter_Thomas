@@ -37,11 +37,11 @@
 }
 .tweetbut{
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: -moz-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: -ms-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: -o-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: linear-gradient(to bottom, #16ad35, #1d9e29);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -83,7 +83,7 @@ h1{
 	color: #002F2F;
 }
 body{
-	background-color:  #1DA1F2;
+	background-color: #32c752;
 
 }
 .txt{
@@ -194,16 +194,21 @@ fieldset[disabled] .btn-warning.focus {
 	vertical-align: bottom;
 }
 #poi a:link{
-	color: blue;
+	color: green;
 	text-decoration:none; 
 
 }
 #poi a:visited{
-	color: blue;
+	color: #34b52e;
 	text-decoration:none; 
 
 }
-
+#lienprofil{
+	color: #0e9d07;
+}
+#deco{
+	color: #0e9d07;
+}
 
 
 .affich{
@@ -238,10 +243,18 @@ text-decoration: blink;
 	border-color: black;
 	width: 300px;
 	padding-bottom: 10px;
-	background-color: #edf4f6;
+	background-color: #35bf37;
 	margin-top: 10px;
 }
+.lienresult{
+	color: #0e9d07;
+}
+.lienmembre{
+	margin-left: 5px;
+}
+
 .david{
+	margin-top: 5px;
 	width: 150px;
 	height: auto;
 	margin-left: 60px;
@@ -269,16 +282,16 @@ text-decoration: blink;
 }
 .but{
 	  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top,#16ad35, #1d9e29);
+  background-image: -moz-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: -ms-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: -o-linear-gradient(top, #16ad35, #1d9e29);
+  background-image: linear-gradient(to bottom, #16ad35, #1d9e29);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 0px;
   font-family: Arial;
-  color: #ffffff;
+  color: white;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
@@ -286,11 +299,11 @@ text-decoration: blink;
 }
 .but:hover {
   background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background-image: -webkit-linear-gradient(top, #3fb557, #38cf45);
+  background-image: -moz-linear-gradient(top, #3fb557, #38cf45);
+  background-image: -ms-linear-gradient(top, #3fb557, #38cf45);
+  background-image: -o-linear-gradient(top, #3fb557, #38cf45);
+  background-image: linear-gradient(to bottom, #3fb557, #38cf45);
   text-decoration: none;
 }
 
@@ -302,7 +315,7 @@ text-decoration: blink;
 	width: 850px;
 border-style: double;
 border-color: black;
-background-color: #edf4f6;
+background-color: #35bf37;
 margin-left: 10px;
 margin-top: 10px;
 
@@ -316,7 +329,7 @@ margin-top: 10px;
 	
 }
 .imagetw{
-	background-image: url("twit.jpg");
+	background-image: url("arbre1.jpg");
 	background-repeat: no-repeat;
 	justify-content: space-around;
 	width: 300px;

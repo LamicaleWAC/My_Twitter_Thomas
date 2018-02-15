@@ -37,11 +37,11 @@
 }
 .tweetbut{
   background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: -moz-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: -ms-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: -o-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: linear-gradient(to bottom, #6a756d, #3e4a3f);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
@@ -83,7 +83,7 @@ h1{
 	color: #002F2F;
 }
 body{
-	background-color:  #1DA1F2;
+	background-color:  black;
 
 }
 .txt{
@@ -238,7 +238,7 @@ text-decoration: blink;
 	border-color: black;
 	width: 300px;
 	padding-bottom: 10px;
-	background-color: #edf4f6;
+	background-color: grey;
 	margin-top: 10px;
 }
 .david{
@@ -269,16 +269,16 @@ text-decoration: blink;
 }
 .but{
 	  background: #3498db;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  background-image: -webkit-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: -moz-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: -ms-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: -o-linear-gradient(top, #6a756d, #3e4a3f);
+  background-image: linear-gradient(to bottom, #6a756d, #3e4a3f);
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 0px;
   font-family: Arial;
-  color: #ffffff;
+  color: black;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
@@ -286,11 +286,11 @@ text-decoration: blink;
 }
 .but:hover {
   background: #3cb0fd;
-  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
-  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  background-image: -webkit-linear-gradient(top, #848c91, #5e5e5e);
+  background-image: -moz-linear-gradient(top, #848c91, #5e5e5e);
+  background-image: -ms-linear-gradient(top, #848c91, #5e5e5e);
+  background-image: -o-linear-gradient(top, #848c91, #5e5e5e);
+  background-image: linear-gradient(to bottom, #848c91, #5e5e5e);
   text-decoration: none;
 }
 
@@ -302,7 +302,7 @@ text-decoration: blink;
 	width: 850px;
 border-style: double;
 border-color: black;
-background-color: #edf4f6;
+background-color: grey;
 margin-left: 10px;
 margin-top: 10px;
 
@@ -316,7 +316,7 @@ margin-top: 10px;
 	
 }
 .imagetw{
-	background-image: url("twit.jpg");
+	background-image: url("dark.jpg");
 	background-repeat: no-repeat;
 	justify-content: space-around;
 	width: 300px;
@@ -367,4 +367,11 @@ margin-top: 10px;
 .lien5{
 	color: black;
 	text-decoration: none;
+}
+
+#lienprofil{
+	color: #6a756d;
+}
+#deco{
+	color: #6a756d;
 }

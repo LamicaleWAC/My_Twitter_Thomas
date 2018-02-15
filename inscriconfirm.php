@@ -20,7 +20,7 @@ require_once("creatememberobject.php");
 <html>
 <head>
 	<title></title>
-	 <link rel="stylesheet" type="text/css" href="bootstrap.css">
+	 <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>

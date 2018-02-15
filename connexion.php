@@ -106,8 +106,11 @@ public function setPassword($password, $salt = "si tu aimes la wac tape dans tes
             $info = $rq->fetchAll();
             foreach ($info as $key => $value) 
             {
-             echo "<a href=\"profilmembre.php?ID=".$value['id']."\" >"; ?>
-            <strong><?php echo $value["username"];?></strong><br>
+            echo '<div class= "searchbox">';
+            echo '<a class="lien5" href="profilmembre.php?ID='.$value['id'].'" >';
+            echo '<img src='.$value["picture"].' class="david"><br>'; ?>
+            <strong><?php echo '<p class="lien5">'. $value["username"];'</p>'?></strong><br>
+            </div>
             <?php
             $_SESSION["idcible"] = $value["id"];
             
