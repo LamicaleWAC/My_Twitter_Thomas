@@ -133,6 +133,7 @@ foreach ($posts as $key => $list){
 </body>
 </html>
         </div>
+        <script type="text/javascript" src="popup.js"></script>
       <script type="text/javascript" src="theme.js"></script>
       <script type="text/javascript" src="modifprofil.js"></script>
       
