@@ -240,21 +240,9 @@ text-decoration: blink;
 	padding-bottom: 10px;
 	background-color: #edf4f6;
 	margin-top: 10px;
-	margin-right: 2px;
-}
-.date{
-	display: block;
-	align-items: bottom;
 }
 .david{
 	width: 150px;
-	height: auto;
-	margin-left: 60px;
-	border-radius: 60px;
-	
-}
-.david1{
-	width: 50px;
 	height: auto;
 	margin-left: 60px;
 	border-radius: 60px;
@@ -319,19 +307,6 @@ margin-left: 10px;
 margin-top: 10px;
 
 }
-.tweetbox1{
-	display: flex;
-	flex-direction: column;
-	float: left;
-	height: 220px;
-	width: 450px;
-border-style: double;
-border-color: black;
-background-color: #edf4f6;
-margin-left: 10px;
-margin-top: 10px;
-
-}
 .tweets{
 	background-color: #edf4f6;
 }
@@ -340,15 +315,7 @@ margin-top: 10px;
 	flex-direction: row;
 	
 }
-.imagetw{
-	background-image: url("twit.jpg");
-	background-repeat: no-repeat;
-	justify-content: space-around;
-	width: 300px;
-	height: 150px;
-	margin-left: 50px;
-	margin-top: -30px;
-	float: right;
+
 }
 .money{
 	background-image: url("im1.jpg");

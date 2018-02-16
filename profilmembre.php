@@ -3,6 +3,7 @@ session_start();
 require_once("connexion.php");
 require_once("bdd.php");
 require_once("profil.php");
+include_once('functions.php');
 if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
 
 {
@@ -60,6 +61,21 @@ $username = $user->getUsername($_GET["ID"]);
     ?>
   </div>
   </div>
+  <?php 
+  $posts = show_posts($_GET['ID']);
+ 
+if (count($posts)){
+?>
+<table border='1' cellspacing='0' cellpadding='5' width='800' class="tweets">
+<?php
+foreach ($posts as $key => $list){
+    echo "<tr valign='top'>\n";
+    echo '<td><img src='.$list["picture"].' class="david1"></td>';
+    echo "<td>".$list['content'] ."<br/>\n";
+    echo '<br><br><small class="date">'.$list['created_date'] .'</small></td>';
+    echo "</tr>\n";
+
+}}?>
   <script type="text/javascript" src="checkfollow.js"></script>
   <script type="text/javascript" src="requete.js"></script>
   </body>

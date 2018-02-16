@@ -26,6 +26,7 @@ if (!isset($_SESSION["id"]) || !isset($_COOKIE[$_SESSION["id"]]))
     <div> <a href="pageprofil.php"  id="lienprofil">Mon profil</a></div>
       <div><a  href="decopage.php"  id="deco">Deconnection</a></div>
       </div>
+      <div><input type="image" src="mess.png" name="messagerie" id="messagerie"> </div>
     
     <div><?php $u = new profil($_SESSION["id"]);
        echo $u->getUsername($_SESSION["id"]);?></div>
@@ -107,13 +108,13 @@ $posts = show_posts($_SESSION['id']);
  
 if (count($posts)){
 ?>
-<table border='1' cellspacing='0' cellpadding='5' width='500' class="tweets">
+<table border='1' cellspacing='0' cellpadding='5' width='800' class="tweets">
 <?php
 foreach ($posts as $key => $list){
     echo "<tr valign='top'>\n";
-    echo "<td>".$list['id_user'] ."</td>\n";
-    echo "<td>".$list['content'] ."<br/>\n";
-    echo "<small>".$list['created_date'] ."</small></td>\n";
+    echo '<td><img src='.$list["picture"].' class="david1"></td>';
+    echo "<td><p>".$list['content'] ."</p><br/>\n";
+    echo '<br><br><small class="date">'.$list['created_date'] .'</small></td>';
     echo "</tr>\n";
 
 }
@@ -133,6 +134,7 @@ foreach ($posts as $key => $list){
 </body>
 </html>
         </div>
+         <script type="text/javascript" src="messagerie.js"></script>
         <script type="text/javascript" src="popup.js"></script>
       <script type="text/javascript" src="theme.js"></script>
       <script type="text/javascript" src="modifprofil.js"></script>
